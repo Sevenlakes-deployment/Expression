@@ -498,6 +498,7 @@ public final class Expression: CustomStringConvertible {
         symbols[.function("tan", arity: 1)] = { tan($0[0]) }
         symbols[.function("atan", arity: 1)] = { atan($0[0]) }
         symbols[.function("abs", arity: 1)] = { abs($0[0]) }
+        symbols[.function("exp", arity: 1)] = { exp($0[0]) }
 
         // functions - arity 2
         symbols[.function("pow", arity: 2)] = { pow($0[0], $0[1]) }
@@ -507,6 +508,50 @@ public final class Expression: CustomStringConvertible {
         // functions - variadic
         symbols[.function("max", arity: .atLeast(2))] = { $0.reduce($0[0]) { max($0, $1) } }
         symbols[.function("min", arity: .atLeast(2))] = { $0.reduce($0[0]) { min($0, $1) } }
+        
+        
+        
+        symbols[.function("sqrt".uppercased(), arity: 1)] = { sqrt($0[0]) }
+        symbols[.function("floor".uppercased(), arity: 1)] = { floor($0[0]) }
+        symbols[.function("ceil".uppercased(), arity: 1)] = { ceil($0[0]) }
+        symbols[.function("round".uppercased(), arity: 1)] = { round($0[0]) }
+        symbols[.function("cos".uppercased(), arity: 1)] = { cos($0[0]) }
+        symbols[.function("acos".uppercased(), arity: 1)] = { acos($0[0]) }
+        symbols[.function("sin".uppercased(), arity: 1)] = { sin($0[0]) }
+        symbols[.function("asin".uppercased(), arity: 1)] = { asin($0[0]) }
+        symbols[.function("tan".uppercased(), arity: 1)] = { tan($0[0]) }
+        symbols[.function("atan".uppercased(), arity: 1)] = { atan($0[0]) }
+        symbols[.function("abs".uppercased(), arity: 1)] = { abs($0[0]) }
+        symbols[.function("exp".uppercased(), arity: 1)] = { exp($0[0]) }
+        // functions - arity 2
+        symbols[.function("pow".uppercased(), arity: 2)] = { pow($0[0], $0[1]) }
+        symbols[.function("atan2".uppercased(), arity: 2)] = { atan2($0[0], $0[1]) }
+        symbols[.function("mod".uppercased(), arity: 2)] = { fmod($0[0], $0[1]) }
+
+        // functions - variadic
+        symbols[.function("max".uppercased(), arity: .atLeast(2))] = { $0.reduce($0[0]) { max($0, $1) } }
+        symbols[.function("min".uppercased(), arity: .atLeast(2))] = { $0.reduce($0[0]) { min($0, $1) } }
+        
+        symbols[.function("sqrt".capitalized, arity: 1)] = { sqrt($0[0]) }
+        symbols[.function("floor".capitalized, arity: 1)] = { floor($0[0]) }
+        symbols[.function("ceil".capitalized, arity: 1)] = { ceil($0[0]) }
+        symbols[.function("round".capitalized, arity: 1)] = { round($0[0]) }
+        symbols[.function("cos".capitalized, arity: 1)] = { cos($0[0]) }
+        symbols[.function("acos".capitalized, arity: 1)] = { acos($0[0]) }
+        symbols[.function("sin".capitalized, arity: 1)] = { sin($0[0]) }
+        symbols[.function("asin".capitalized, arity: 1)] = { asin($0[0]) }
+        symbols[.function("tan".capitalized, arity: 1)] = { tan($0[0]) }
+        symbols[.function("atan".capitalized, arity: 1)] = { atan($0[0]) }
+        symbols[.function("abs".capitalized, arity: 1)] = { abs($0[0]) }
+        symbols[.function("exp".capitalized, arity: 1)] = { exp($0[0]) }
+        // functions - arity 2
+        symbols[.function("pow".capitalized, arity: 2)] = { pow($0[0], $0[1]) }
+        symbols[.function("atan2".capitalized, arity: 2)] = { atan2($0[0], $0[1]) }
+        symbols[.function("mod".capitalized, arity: 2)] = { fmod($0[0], $0[1]) }
+
+        // functions - variadic
+        symbols[.function("max".capitalized, arity: .atLeast(2))] = { $0.reduce($0[0]) { max($0, $1) } }
+        symbols[.function("min".capitalized, arity: .atLeast(2))] = { $0.reduce($0[0]) { min($0, $1) } }
 
         return symbols
     }()
